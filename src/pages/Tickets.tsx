@@ -186,14 +186,14 @@ const Tickets = () => {
               
               <div className="w-full">
                 <Select
-                  value={endDigitFilter || ''}
-                  onValueChange={(value) => setEndDigitFilter(value || null)}
+                  value={endDigitFilter || "all"}
+                  onValueChange={(value) => setEndDigitFilter(value === "all" ? null : value)}
                 >
                   <SelectTrigger>
                     <SelectValue placeholder="Final do número" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Todos os finais</SelectItem>
+                    <SelectItem value="all">Todos os finais</SelectItem>
                     {Array.from({ length: 10 }, (_, i) => i).map(digit => (
                       <SelectItem key={digit} value={digit.toString()}>
                         Final {digit}

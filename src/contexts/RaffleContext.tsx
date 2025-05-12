@@ -317,12 +317,12 @@ export const RaffleProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         if (status === 'available') {
           return {
             number: ticket.number,
-            status: 'available'
+            status: 'available' as const
           };
         }
         return {
           ...ticket,
-          status
+          status: status
         };
       }
       return ticket;
